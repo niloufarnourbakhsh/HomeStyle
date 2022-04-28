@@ -17,10 +17,14 @@ class checkTheAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->checkTheAdmin()){
+        if (Auth::check()){
 
-            return redirect('/admin');
+            if (Auth::user()->checkTheAdmin()){
+
+                return $next($request);
+            }
         }
+
         return $next($request);
     }
 }

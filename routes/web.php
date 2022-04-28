@@ -32,7 +32,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware([checkTheAdmin::class])->group(function (){
-    Route::view('/admin','admin/index');
+    Route::get('/admin',function (){
+        return view('admin.index');
+    });
     Route::get('/category',[CategoryController::class,'index']);
     Route::post('/category/',[CategoryController::class,'store']);
     Route::delete('/category/{category}',[CategoryController::class,'delete']);
