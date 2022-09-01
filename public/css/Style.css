@@ -1,10 +1,13 @@
 :root {
     --nav: #E8DBCB;
-    --logo: #844d6c;
+    --logo: #b42737;
     --navy-blue: #2a3950;
     --dark-bg: #040000;
     --light-gray: #dddddd;
     --green: #1abb9c;
+    --dark_red: #8b0f17;
+    --creamy: #d6cbb5;
+    --dark_brown: #7f6453;
 }
 
 /*@font-face {*/
@@ -17,7 +20,7 @@
 /*}*/
 
 body, body#admin {
-    font-family:  Tahoma !important;
+    font-family: Tahoma !important;
     direction: rtl !important;
     font-size: 14px;
     background-color: #e3ede7;
@@ -40,7 +43,6 @@ a, a:hover {
 }
 
 .cart-padding {
-
     padding: 1px 3px;
 }
 
@@ -55,23 +57,19 @@ a, a:hover {
 }
 
 #nav-section ul li:hover {
-    background: var(--logo);
+    background: var(--dark_red);
     color: black !important;
     padding: 1.5rem;
     transition: all 0.9s;
     border-radius: 20px;
 }
 
-nav#menu {
-    background-color: var(--logo)
-}
+nav#menu { background-color: var(--logo)}
 
-.logo {
-    color: var(--logo)
-}
+.logo {color: var(--creamy)}
 
 footer#Footer {
-    background-color: var(--navy-blue);
+    background-color: var(--dark_brown);
     height: 15vh;
 }
 
@@ -101,11 +99,11 @@ footer#Footer {
 }
 
 .item-color {
-    color: var(--navy-blue);
+    color: var(--dark_brown);
 }
 
 .text-navy-blue {
-    color: var(--navy-blue)
+    color: var(--dark_brown)
 }
 
 #products-part,
@@ -114,12 +112,12 @@ footer#Footer {
     margin: auto;
 }
 
-.bg-purple {
+.bg-cream {
     background-color: var(--logo) !important;
 }
-
+.text-red{ color: var(--logo) }
 .bg-navy-blue {
-    background-color: var(--navy-blue) !important;
+    background-color: var(--dark_red) !important;
 }
 
 .border-purple:not(last-child) {
@@ -145,7 +143,8 @@ footer#Footer {
 .dashed-border {
     border: 4px dashed rgba(0, 0, 0, 0.99);
 }
-.bg-black{
+
+.bg-black {
     background-color: var(--dark-bg);
     border: 1px solid var(--dark-bg);
 }
