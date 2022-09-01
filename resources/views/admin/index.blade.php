@@ -50,7 +50,7 @@
                     <div class="col mb-3 text-center rounded">
                         <div class="card ">
                             <a href="{{url('/processed')}}" class="p-4 bg-dark-green text-white">
-                                پردازش شده
+                                سفارشات پردازش شده
                             </a>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                     <div class="col mb-3 text-center rounded">
                         <div class="card ">
                             <a href="{{url('/sent')}}" class="p-4 bg-purple text-white">
-                                ارسال شده
+                                سفارشات ارسال شده
                             </a>
                         </div>
                     </div>

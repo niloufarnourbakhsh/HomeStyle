@@ -1,5 +1,5 @@
 @extends('Inc.Base')
-
+@section('title','لیست محصولات')
 @section('body')
     <div class="container-fluid  pr-3 mt-5 " id="products-part">
 

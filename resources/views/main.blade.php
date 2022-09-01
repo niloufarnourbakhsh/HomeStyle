@@ -1,4 +1,5 @@
 @extends('Inc.Base')
+@section('title','صفحه ی اصلی ')
 @section('body')
     <section id="mainpage-photo-part">
         <div class="container-fluid" id="mainpage-cover">

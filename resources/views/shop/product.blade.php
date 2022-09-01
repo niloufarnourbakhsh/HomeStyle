@@ -1,4 +1,5 @@
 @extends('Inc.Base')
+@section('title',$product->slug)
 @section('body')
 
     <div class="container bg-light mt-5 mb-5" id="product-part" style="min-height: 66vh">
