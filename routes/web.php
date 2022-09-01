@@ -11,6 +11,7 @@ use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\checkTheAdmin;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +26,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $categories = Category::query()->with('images')->get();
-    return view('main')->with('categories', $categories);
+    return view('main');
 });
 
 Auth::routes();

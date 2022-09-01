@@ -29,10 +29,8 @@ class ShoppingController extends Controller
             Category::where(['name' => \request()->category])->first()->name
             : 'تمامی محصولات';
 
-        $categories = Category::all();
         return view('shop.products')
             ->with('products', $products)
-            ->with('categories', $categories)
             ->with('categoryName', $categoryName);
 
     }

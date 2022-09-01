@@ -9,34 +9,33 @@ use App\Http\Requests\SearchRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use function request;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        if (\request()->category) {
+        if (request()->category) {
             $products = Product::with('category')->whereHas('category', function ($query) {
-                $query->where('name', \request()->category);
+                $query->where('name', request()->category);
             });
         } else {
             $products = Product::query()->with(['category', 'images'])->take(12);
         }
         $products = $products->paginate(12);
 
-        $categoryName = optional(Category::where(['name' => \request()->category])->first())->name ?
-            Category::where(['name' => \request()->category])->first()->name
+        $categoryName = optional(Category::where(['name' => request()->category])->first())->name ?
+            Category::where(['name' => request()->category])->first()->name
             : 'تمامی محصولات';
-        $categories = Category::all();
+
         return view('admin.products.index')
             ->with('products', $products)
-            ->with('categories', $categories)
             ->with('categoryName', $categoryName);
     }
 
     public function create()
     {
-        $categories = Category::all();
-        return view('admin.products.create')->with('categories', $categories);
+        return view('admin.products.create');
     }
 
     public function store(ProductsCreateRequest $request)
@@ -59,8 +58,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $product->with('images');
-        $categories = Category::all();
-        return view('admin.products.edit')->with('product', $product)->with('categories', $categories);
+        return view('admin.products.edit')->with('product', $product);
     }
 
     public function update(UpdateProductRequest $request, Product $product)
@@ -79,13 +77,12 @@ class ProductController extends Controller
 
     public function search(SearchRequest $request)
     {
-        $categories = Category::all();
         $query = $request->search;
         $products = Product::query()
             ->where('name', 'like', "%$query%")
             ->orWhere('details', 'like', "%$query%")
             ->orWhere('description', 'like', "%$query%")
             ->get();
-        return view('search')->with('products', $products)->with('categories', $categories);
+        return view('search')->with('products', $products);
     }
 }

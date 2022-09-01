@@ -55,7 +55,6 @@ class CheckOutController extends Controller
      */
     private function getCheckOutInfo()
     {
-
         $user= Auth::user();
         $address = $user->address() ? $user->address()->first() : null;
 
