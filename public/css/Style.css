@@ -1,13 +1,12 @@
 :root {
     --nav: #E8DBCB;
-    --logo: #b42737;
-    --navy-blue: #2a3950;
+    --logo: #bf5e17;
     --dark-bg: #040000;
     --light-gray: #dddddd;
     --green: #1abb9c;
-    --dark_red: #8b0f17;
-    --creamy: #d6cbb5;
-    --dark_brown: #7f6453;
+    --orange_light: #e39e50;
+    --dark_brown: #4e4138;
+    --btn_red: #891827;
 }
 
 /*@font-face {*/
@@ -57,16 +56,16 @@ a, a:hover {
 }
 
 #nav-section ul li:hover {
-    background: var(--dark_red);
+    background: var(--logo);
     color: black !important;
     padding: 1.5rem;
     transition: all 0.9s;
     border-radius: 20px;
 }
 
-nav#menu { background-color: var(--logo)}
+nav#menu { background-color: var(--orange_light)}
 
-.logo {color: var(--creamy)}
+.logo {color: var(--logo)}
 
 footer#Footer {
     background-color: var(--dark_brown);
@@ -112,15 +111,15 @@ footer#Footer {
     margin: auto;
 }
 
-.bg-cream {
+.bg-orange{
     background-color: var(--logo) !important;
 }
-.text-red{ color: var(--logo) }
+.text-orange{ color: var(--logo) }
 .bg-navy-blue {
-    background-color: var(--dark_red) !important;
+    background-color: var(--light-orange) !important;
 }
 
-.border-purple:not(last-child) {
+.border-orange:not(last-child) {
     border-bottom: 3px solid var(--logo);
 }
 
@@ -147,4 +146,7 @@ footer#Footer {
 .bg-black {
     background-color: var(--dark-bg);
     border: 1px solid var(--dark-bg);
+}
+.bg-red{
+    background-color: var(--btn_red)!important;
 }

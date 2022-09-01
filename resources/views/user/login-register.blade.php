@@ -27,7 +27,7 @@
                         <strong>{{ $message }}</strong>
                         @enderror
 
-                        <button class="btn bg-purple btn-lg text-white mt-3">ورود به وبسایت</button>
+                        <button class="btn btn-lg bg-red text-light mt-3">ورود به وبسایت</button>
                     </div>
                 </form>
             </div>
@@ -93,7 +93,7 @@
                                required autocomplete="new-password">
                     </div>
 
-                    <button class="btn bg-navy-blue btn-lg text-white mt-3">عضویت در وبسایت</button>
+                    <button class="btn bg-red btn-lg text-white mt-3">عضویت در وبسایت</button>
                 </form>
             </div>
         </div>

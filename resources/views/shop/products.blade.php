@@ -6,20 +6,20 @@
         <div class="row">
             <aside class="col-3 bg-white pr-3 text-right bg-warning">
                 <div>
-                    <p class="h5 p-3 bg-purple rounded text-white">براساس قیمت</p>
+                    <p class="h5 p-3 bg-orange rounded text-white">براساس قیمت</p>
                     <ul class="nav flex-column">
 
-                        <li class=" border-purple p-3"><a
+                        <li class="border-orange p-3"><a
                                 href="{{route('products',['category='=>request()->category,'sort'=>'high_to_low'])}}"
                                 class="text-dark font-weight-bold">کمترین قیمت</a></li>
-                        <li class=" border-purple p-3"><a
+                        <li class="border-orange p-3"><a
                                 href="{{route('products',['category='=>request()->category,'sort'=>'low_to_high'])}}"
                                 class="text-dark font-weight-bold">بیشترین قیمت</a></li>
 
                     </ul>
                 </div>
                 <div class="mt-5 mb-4">
-                    <p class="h5 p-3 bg-purple rounded text-white">براساس محصولات</p>
+                    <p class="h5 p-3 text- rounded text-white">براساس محصولات</p>
                     <ul class="nav flex-column mb-4" id="aside-part">
                         @foreach($categories as $category )
                             <li class="border-purple p-3"><a href="{{route('products',['category='.$category->name])}}"
@@ -32,7 +32,7 @@
 
             <section class="col-9 p-3 bg-product-part">
 
-                <span class="h4 logo">{{$categoryName}}</span>
+                <span class="h4 text-red">{{$categoryName}}</span>
                 <div class="row row-cols-4 mb-4 mt-4">
 
                     @forelse($products as $product)
