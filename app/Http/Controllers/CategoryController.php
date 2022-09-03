@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -29,7 +28,7 @@ class CategoryController extends Controller
         return redirect()->back();
     }
 
-    public function edit(Request $request,Category $category)
+    public function edit(Request $request, Category $category)
     {
         $category->update(['name' => $request->category]);
         return redirect()->back();
