@@ -23,6 +23,7 @@
                     <button class="btn btn-orange mt-4 btn-lg" type="submit">ذخیره</button>
                 </form>
             </div>
+
             <div class="col-1"></div>
             <div class="col-5 text-right">
                 <h5 class=" mb-4">کالکشن های موجود:</h5>
@@ -36,16 +37,18 @@
                     </tr>
                     </thead>
                     <tbody>
+
                     @foreach($categories as $category)
                         <tr>
-                            <td scope="row">{{$category->id}}</td>
+                            <td>{{$category->id}}</td>
                             <td colspan="2">
                                 <form action="{{url('/category/'.$category->id)}}" method="POST">
-                                    @method('PUT')
                                     @csrf
+                                    @method('PUT')
                                     <div class="d-flex flex-row text-right justify-content-around">
-                                        <input type="text" name="category" value="{{$category->name}}"
-                                               class="form-control">
+                                        <label for="category_name"></label>
+                                        <input type="text" name="category"  id="category_name" value="{{$category->name}} "
+                                               class="form-control" required>
                                         <button type="submit" class="btn btn-orange"> ویرایش</button>
                                     </div>
                                 </form>

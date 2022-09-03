@@ -28,4 +28,13 @@ class CategoryRequest extends FormRequest
             'image' => 'required'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required'=>'یک اسم برای کالکشن مورد نظر انتخاب کنید ',
+            'name.min'=>'اسم کالکشن باید بیشتر از ۳ حرف باشد',
+            'image.required'=>'یک تصویر برای پس زمینه انتخاب کنید'
+        ];
+    }
 }
