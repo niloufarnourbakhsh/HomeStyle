@@ -41,7 +41,7 @@
                             <input type="hidden" name="name" value="{{$product->name}}">
                             <input type="hidden" name="price" value="{{$product->price}}">
 
-                            <button class="btn btn-block bg-navy-blue btn-lg text-white" type="submit">افزودن به سبد
+                            <button class="btn btn-block bg-red btn-lg text-white" type="submit">افزودن به سبد
                                 خرید
                             </button>
                         </form>

@@ -19,11 +19,12 @@
                     </ul>
                 </div>
                 <div class="mt-5 mb-4">
-                    <p class="h5 p-3 text- rounded text-white">براساس محصولات</p>
+                    <p class="h5 p-3 rounded bg-orange text-white">براساس محصولات</p>
                     <ul class="nav flex-column mb-4" id="aside-part">
                         @foreach($categories as $category )
-                            <li class="border-purple p-3"><a href="{{route('products',['category='.$category->name])}}"
-                                                             class="text-dark font-weight-bold"> {{$category->name}}</a>
+                            <li class="border-orange p-3">
+                                <a href="{{route('products',['category='.$category->name])}}"
+                                   class="text-dark font-weight-bold"> {{$category->name}}</a>
                             </li>
                         @endforeach
                     </ul>

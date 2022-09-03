@@ -9,7 +9,7 @@
         </div>
         @if(\Gloudemans\Shoppingcart\Facades\Cart::count()>0)
             <div>
-                <p><span class="bg-purple rounded p-2">{{\Gloudemans\Shoppingcart\Facades\Cart::count()}}</span> محصول
+                <p><span class="bg-red text-light rounded p-2">{{\Gloudemans\Shoppingcart\Facades\Cart::count()}}</span> محصول
                     در سبد خرید شما هست</p>
             </div>
         @endif
