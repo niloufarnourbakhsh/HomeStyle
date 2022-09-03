@@ -9,6 +9,7 @@
                 <th>نام کاربر</th>
                 <th>زمان ثبت سفارش</th>
                 <th>وضعیت سفارش</th>
+
                 </thead>
                 <tbody>
                 @foreach($orders as $order)
@@ -36,5 +37,6 @@
                 </tbody>
             </table>
         </div>
+        <div class=" mt-4 text-success">{{$orders->appends(request()->input())->links()}}</div>
     </div>
 @endsection

@@ -42,14 +42,14 @@
                     </div>
                     <div class="col mb-3 text-center rounded">
                         <div class="card ">
-                            <a href="{{url('/ordered')}}" class="p-4 bg-lighter-green text-white">
+                            <a href="{{url('/order/status/1')}}" class="p-4 bg-lighter-green text-white">
                                 سفارشات ثبت شده
                             </a>
                         </div>
                     </div>
                     <div class="col mb-3 text-center rounded">
                         <div class="card ">
-                            <a href="{{url('/processed')}}" class="p-4 bg-dark-green text-white">
+                            <a href="{{url('/order/status/2')}}" class="p-4 bg-dark-green text-white">
                                 سفارشات پردازش شده
                             </a>
                         </div>
@@ -57,7 +57,7 @@
 
                     <div class="col mb-3 text-center rounded">
                         <div class="card ">
-                            <a href="{{url('/sent')}}" class="p-4 bg-purple text-white">
+                            <a href="{{url('/order/status/3')}}" class="p-4 bg-purple text-white">
                                 سفارشات ارسال شده
                             </a>
                         </div>
