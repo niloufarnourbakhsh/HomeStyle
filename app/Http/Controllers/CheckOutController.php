@@ -6,24 +6,33 @@ use App\Models\Order;
 use App\Models\OrderProduct;
 use App\Models\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class CheckOutController extends Controller
 {
     //checking the address
-    public function showAddress()
+    public function showAddress( )
     {
-        $user=$this->getCheckOutInfo();
+        $user=Auth::user();
+        $address=$this->getCheckOutInfo($user);
+        if (is_null($address)) {
+            Session::flash('address', 'لطفا آدرس و اطلاعات خود را جهت ارسال کالا وارد کنید');
+            return redirect('/address');
+        }
         $user->with('address');
-        return view('shop.step-2')->with('user',$user);
+        return view('shop.step-2')->with('user', $user);
     }
 
     public function checkAll()
     {
-        $user=$this->getCheckOutInfo();
-        $user->with('address');
-        return view('shop.step-3')->with('user',$user);
+        $user=Auth::user();
+        $address=$this->getCheckOutInfo($user);
+        if (is_null($address)) {
+            return redirect('/address');
+        }
+        return view('shop.step-3')->with('user', $user);
     }
 
     public function addToOrderTable()
@@ -45,7 +54,6 @@ class CheckOutController extends Controller
             $remaining = $product->count - $ordered->quantity;
             $product->update(['count' => $remaining]);
         }
-
         Cart::destroy();
         return redirect('/');
     }
@@ -53,15 +61,9 @@ class CheckOutController extends Controller
     /**
      * @return mixed
      */
-    private function getCheckOutInfo()
+    public function getCheckOutInfo($user)
     {
-        $user= Auth::user();
         $address = $user->address() ? $user->address()->first() : null;
-
-        if ( is_null($address)){
-            Session::flash('address','لطفا آدرس و اطلاعات خود را جهت ارسال کالا وارد کنید');
-            return redirect('/address');
-        }
-        return $user;
+        return $address;
     }
 }
