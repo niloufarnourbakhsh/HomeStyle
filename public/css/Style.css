@@ -7,6 +7,7 @@
     --orange_light: #e39e50;
     --dark_brown: #4e4138;
     --btn_red: #891827;
+    --bg-purple: #7c446b;
 }
 
 /*@font-face {*/
@@ -87,7 +88,7 @@ footer#Footer {
 
 #mainpage-photo-part #mainpage-cover {
     background-color: rgba(5, 5, 5, 0.7);
-    height: 85vh;
+    height: 82vh;
     width: 100%;
 }
 
@@ -149,4 +150,7 @@ footer#Footer {
 }
 .bg-red{
     background-color: var(--btn_red)!important;
+}
+.bg-purple{
+    background-color: var(--bg-purple);
 }
