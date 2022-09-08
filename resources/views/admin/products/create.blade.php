@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-8">
                 <p class="p-3 h5 bg-purple text-white">اضافه کردن محصول جدید</p>
-                <form action="{{url('/products/store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{url('product/store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group m-3">
                         <label for="name" class="mb-2">اسم محصول:</label>

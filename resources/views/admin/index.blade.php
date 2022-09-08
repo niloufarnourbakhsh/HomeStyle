@@ -14,14 +14,14 @@
                     </div>
                     <div class="col mb-3 text-center rounded ">
                         <div class="card  ">
-                            <a href="{{url('/products/create')}}" class="p-4 border-0 bg-purple text-white">
+                            <a href="{{url('/product/create')}}" class="p-4 border-0 bg-purple text-white">
                                 اضافه کردن محصول جدید
                             </a>
                         </div>
                     </div>
                     <div class="col mb-3  text-center rounded ">
                         <div class="card ">
-                            <a href="{{url('/products/admin')}}" class=" p-4 bg-lighter-green text-white">
+                            <a href="{{url('/product')}}" class=" p-4 bg-lighter-green text-white">
                                 مدیریت محصولات
                             </a>
                         </div>
@@ -42,14 +42,14 @@
                     </div>
                     <div class="col mb-3 text-center rounded">
                         <div class="card ">
-                            <a href="{{url('/order/status/1')}}" class="p-4 bg-lighter-green text-white">
+                            <a href="{{url('/orders/status/1')}}" class="p-4 bg-lighter-green text-white">
                                 سفارشات ثبت شده
                             </a>
                         </div>
                     </div>
                     <div class="col mb-3 text-center rounded">
                         <div class="card ">
-                            <a href="{{url('/order/status/2')}}" class="p-4 bg-dark-green text-white">
+                            <a href="{{url('/orders/status/2')}}" class="p-4 bg-dark-green text-white">
                                 سفارشات پردازش شده
                             </a>
                         </div>
@@ -57,7 +57,7 @@
 
                     <div class="col mb-3 text-center rounded">
                         <div class="card ">
-                            <a href="{{url('/order/status/3')}}" class="p-4 bg-purple text-white">
+                            <a href="{{url('/orders/status/3')}}" class="p-4 bg-purple text-white">
                                 سفارشات ارسال شده
                             </a>
                         </div>

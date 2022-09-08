@@ -9,11 +9,11 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="username"> نام کاربری: </label>
-                        <input type="text" name="name" class="form-control my-input-style" id="username">
-                        @if($errors->first('name'))
+                        <label for="email"> ایمیل : </label>
+                        <input type="text" name="email" class="form-control my-input-style" id="email">
+                        @if($errors->first('email'))
                             <p>
-                                {{$errors->first('name')}}
+                                {{$errors->first('email')}}
                             </p>
                         @endif
                     </div>

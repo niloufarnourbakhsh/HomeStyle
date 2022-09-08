@@ -85,7 +85,7 @@
                         <div class="card rounded">
                             <img src="{{url('/storage/'.$image->path)}}" alt="" class="img-size">
                             <div class="card-body">
-                                <form action="{{url('/image/delete/'.$image->id)}}" method="post">
+                                <form action="{{url('product/image/'.$image->id)}}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn-lg bg-danger">delete</button>

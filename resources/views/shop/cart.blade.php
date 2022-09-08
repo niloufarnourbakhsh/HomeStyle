@@ -50,7 +50,7 @@
                                 <td>{{{($item->model->price)*($item->qty)}}}</td>
 
                                 <td>
-                                    <form action="{{url('/remove/'.$item->rowId)}}" method="POST">
+                                    <form action="{{url('cart/remove/'.$item->rowId)}}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn text-muted" type="submit"><i

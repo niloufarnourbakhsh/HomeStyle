@@ -31,32 +31,36 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::middleware([checkTheAdmin::class])->prefix('category')->group(function (){
+    Route::get('/',[CategoryController::class,'index']);
+    Route::post('/',[CategoryController::class,'store']);
+    Route::delete('/{category}',[CategoryController::class,'delete']);
+    Route::put('/{category}',[CategoryController::class,'edit']);
+});
+
+Route::middleware([checkTheAdmin::class])->prefix('product')->group(function () {
+
+    Route::get('/',[ProductController::class,'index'])->name('products.all');
+    Route::get('/create',[ProductController::class,'create']);
+    Route::post('/store',[ProductController::class,'store']);
+    Route::delete('/{product}',[ProductController::class,'delete']);
+    Route::get('/edit/{product}',[ProductController::class,'edit']);
+    Route::put('/{product}',[ProductController::class,'update']);
+    Route::delete('/image/{id}',[ImageController::class,'delete']);
+});
 Route::middleware([checkTheAdmin::class])->group(function (){
     Route::get('/admin',function (){
         return view('admin.index');
     });
-    Route::get('/category',[CategoryController::class,'index']);
-    Route::post('/category/',[CategoryController::class,'store']);
-    Route::delete('/category/{category}',[CategoryController::class,'delete']);
-    Route::put('/category/{category}',[CategoryController::class,'edit']);
-
-    // crud for products root
-    Route::get('/products/admin',[ProductController::class,'index'])->name('products.all');
-    Route::get('/products/create',[ProductController::class,'create']);
-    Route::post('/products/store',[ProductController::class,'store']);
-    Route::delete('/product/{product}',[ProductController::class,'delete']);
-    Route::get('/product/edit/{product}',[ProductController::class,'edit']);
-    Route::put('/product/{product}',[ProductController::class,'update']);
-    Route::delete('/image/delete/{id}',[ImageController::class,'delete']);
-
     //user route
     Route::get('/users',[UserController::class,'index'])->name('users');
-    //order routes
-    Route::get('/ordered',[OrderController::class,'ordered']);
-    Route::get('/processed',[OrderController::class,'processed']);
-    Route::get('/sent',[OrderController::class,'sent']);
-    Route::put('/orders/update/{order}',[OrderController::class,'update']);
-    Route::get('/orders',[OrderController::class,'index']);
+});
+
+//order routes
+Route::middleware([checkTheAdmin::class])->prefix('orders')->group(function () {
+    Route::get('/status/{status_id}',[OrderController::class,'status']);
+    Route::put('/update/{order}',[OrderController::class,'update']);
+    Route::get('/',[OrderController::class,'index']);
 });
 
 Route::get('/product/{product:slug}',[ProductController::class,'show']);
@@ -65,19 +69,22 @@ Route::get('/products/',[ShoppingController::class,'index'])->name('products');
 
 Route::get('/search/',[ProductController::class,'search'])->name('search');
 
-Route::get('/cart', [CartController::class,'index'])->name('cart.index');
-Route::post('/cart/store', [CartController::class,'store']);
-Route::put('/cart/update/{product}', [CartController::class,'update']);
-Route::get('/destroy', [CartController::class,'destroy']);
-Route::delete('/remove/{id}',[CartController::class,'remove']);
+Route::prefix('/cart')->group(function (){
+    Route::get('/', [CartController::class,'index'])->name('cart.index');
+    Route::post('/store', [CartController::class,'store']);
+    Route::put('/update/{product}', [CartController::class,'update']);
+    Route::get('/destroy', [CartController::class,'destroy']);
+    Route::delete('/remove/{id}',[CartController::class,'remove']);
+});
+
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Profile Route
 Route::get('/address',[AdressController::class,'index']);
 Route::post('/address/{user}',[AdressController::class,'store']);
-Route::get('/checkout/step-2',[CheckOutController::class,'showAddress']);
-Route::get('/checkout/step-3',[CheckOutController::class,'checkAll']);
+Route::get('/checkout/step-2',[CheckOutController::class,'showAddress'])->middleware('auth');
+Route::get('/checkout/step-3',[CheckOutController::class,'checkAll'])->middleware('auth');
 Route::get('/done',[CheckOutController::class,'addToOrderTable']);
 
 Route::get('/order',[OrderController::class,'show'])->middleware('auth');

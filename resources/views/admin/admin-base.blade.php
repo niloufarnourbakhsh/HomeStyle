@@ -9,9 +9,9 @@
                 <li class="p-2"><a href="{{url('/category')}}" class="font-weight-bold text-white">
                         <i class="fa-solid fa-bars items-color p-2 fa-2x"></i>
                         طبقه بندی محصولات</a></li>
-                <li class="p-2"><a href="{{url('/products/create')}}" class="font-weight-bold text-white">
+                <li class="p-2"><a href="{{url('/product/create')}}" class="font-weight-bold text-white">
                         <i class="fa-solid fa-plus items-color p-2 fa-2x"></i>اضافه کردن محصول جدید</a></li>
-                <li class="p-2"><a href="{{url('/products/admin')}}" class="font-weight-bold text-white">
+                <li class="p-2"><a href="{{url('/product')}}" class="font-weight-bold text-white">
                         <i class="fa-solid fa-database items-color p-2 fa-2x"></i>
                         مدیریت محصولات
                     </a></li>
