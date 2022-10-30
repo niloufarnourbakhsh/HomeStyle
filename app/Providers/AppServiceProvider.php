@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use App\Models\Category;
-use App\Models\Status;
+use App\Http\View\Composers\CategoriesComposer;
+use App\Http\View\Composers\StatusesComposer;
+
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::share('categories',Category::query()->with('images')->orderBy('name')->get());
-        View::share('statuses',  Status::query()->get());
+        View::composer(['admin.category.index','admin.products.*','shop.products','main','search'],CategoriesComposer::class);
+        View::composer(['orders.*'],StatusesComposer::class);
     }
 }
