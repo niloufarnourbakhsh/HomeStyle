@@ -9,7 +9,7 @@ class CategoriesComposer
 {
     public function compose(View $view)
     {
-        $view->with(Category::query()->with('images')->orderBy('name')->get());
+        $view->with('categories',Category::query()->with('images')->orderBy('name')->get());
     }
 
 }

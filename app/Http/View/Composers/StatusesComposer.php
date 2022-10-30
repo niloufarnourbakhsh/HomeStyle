@@ -9,7 +9,7 @@ class StatusesComposer
 {
     public function compose(View $view)
     {
-        $view->with(Status::query()->get());
+        $view->with('statuses',Status::query()->get());
     }
 
 }
