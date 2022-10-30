@@ -10,7 +10,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\checkTheAdmin;
-use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 

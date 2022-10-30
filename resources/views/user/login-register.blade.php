@@ -50,8 +50,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="name" class="mb-2">{{ __('شماره تماس') }}</label>
-                        <input id="number" type="text" class="form-control @error('number') is-invalid @enderror"
+                        <label for="number" class="mb-2">{{ __('شماره تماس') }}</label>
+                        <input id="number" type="text" class="form-control @error('number') is-invalid @enderror "
                                name="number" value="{{ old('number') }}" required autocomplete="number" autofocus>
 
                         @error('number')
