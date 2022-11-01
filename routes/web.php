@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AdressController;
+use App\Http\Controllers\AddressController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckOutController;
@@ -80,8 +80,8 @@ Route::prefix('/cart')->group(function (){
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Profile Route
-Route::get('/address',[AdressController::class,'index']);
-Route::post('/address/{user}',[AdressController::class,'store']);
+Route::get('/address',[AddressController::class,'index']);
+Route::post('/address/{user}',[AddressController::class,'store']);
 Route::get('/checkout/step-2',[CheckOutController::class,'showAddress'])->middleware('auth');
 Route::get('/checkout/step-3',[CheckOutController::class,'checkAll'])->middleware('auth');
 Route::get('/done',[CheckOutController::class,'addToOrderTable']);

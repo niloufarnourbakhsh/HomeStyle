@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdressController extends Controller
+class AddressController extends Controller
 {
     public function index()
     {
