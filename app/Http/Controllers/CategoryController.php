@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\categoryCreatePhoto;
+use App\Events\categoryDeletePhoto;
+use App\Events\CategoryImageDelete;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -17,13 +20,16 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         $category = Category::create($request->only('name'));
-        $path = Storage::disk('public')->put('images', $request->image);
-        $category->images()->create(['path' => $path]);
+
+        event(new categoryCreatePhoto($request->image,$category));
+
+
         return redirect()->back();
     }
 
     public function delete(Category $category)
     {
+        event(new categoryDeletePhoto($category->images));
         $category->delete();
         return redirect()->back();
     }
