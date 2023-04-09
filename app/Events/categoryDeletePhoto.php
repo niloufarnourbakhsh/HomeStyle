@@ -2,6 +2,7 @@
 
 namespace App\Events;
 
+use App\Models\Category;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -19,9 +20,14 @@ class categoryDeletePhoto
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(public $images  )
     {
-        //
+
+    }
+
+    public function getImage()
+    {
+        return $this->images;
     }
 
     /**
