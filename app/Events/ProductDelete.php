@@ -20,8 +20,8 @@ class ProductDelete
      *
      * @return void
      */
-    public $product;
-    public function __construct(Product $product)
+
+    public function __construct(public Product $product)
     {
         //
         $this->product=$product;

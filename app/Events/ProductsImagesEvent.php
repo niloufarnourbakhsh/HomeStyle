@@ -21,12 +21,9 @@ class ProductsImagesEvent
      *
      * @return void
      */
-    public $images;
-    public $product;
-    public function __construct(Product $product,$images)
+
+    public function __construct(public Product $product,public $images)
     {
-        $this->images=$images;
-        $this->product=$product;
     }
 
     public function getImages()
