@@ -24,7 +24,8 @@ class EventServiceProvider extends ServiceProvider
 //        ]
     ];
     protected $subscribe=[
-        'App\Listeners\ImageSubscribe'
+        'App\Listeners\ImageSubscribe',
+        'App\Listeners\CategorySubscribe',
     ];
     /**
      * Register any events for your application.
