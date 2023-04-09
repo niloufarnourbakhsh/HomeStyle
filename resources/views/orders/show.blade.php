@@ -4,7 +4,7 @@
         <div class="row">
             <aside class="col-3 bg-white pr-3 text-right bg-warning">
                 <div>
-                    <p class="h5 p-3 bg-purple rounded text-white">{{ Auth::user()->name }} </p>
+                    <p class="h5 p-4 bg-red  rounded text-white">{{ Auth::user()->name }} </p>
                     <ul class="nav flex-column">
                         <li class=" border-purple p-3"><a
                                 href="{{url('/order')}}"

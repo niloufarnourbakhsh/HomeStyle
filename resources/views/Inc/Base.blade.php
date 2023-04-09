@@ -20,8 +20,10 @@
 <nav id="menu" class="d-flex flex-row justify-content-around">
     <ul class="nav">
         <li class="nav-item  p-3"><a href="{{url('/')}}" class="text-white p-3">صفحه ی اصلی</a></li>
-        @if(auth()->user()->checkTheAdmin())
+        @if(auth()->user())
+            @if(auth()->user()->checkTheAdmin())
         <li class="nav-item  p-3"><a href="{{url('/admin')}}" class="text-white p-3"> مدیریت </a></li>
+        @endif
         @endif
         <li class="nav-item p-3"><a href="{{url('/products')}}" class="text-white p-3">محصولات</a></li>
         <li class="nav-item p-3"><a href="#" class="text-white p-3">درباره ی ما</a></li>

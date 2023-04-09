@@ -16,7 +16,7 @@ class CartController extends Controller
 
     public function store(Request $request)
     {
-        $Exist = Cart::search(function ($cartItem, $rowId) use ($request) {
+        $Exist = Cart::search(function ($cartItem) use ($request) {
             return $cartItem->id === $request->id;
         });
 

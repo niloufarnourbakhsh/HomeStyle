@@ -3,9 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\ProductDelete;
-use App\Events\ProductEdit;
 use App\Events\ProductsImagesEvent;
-use App\Models\Product;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Support\Facades\Storage;
 
